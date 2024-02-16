@@ -32,12 +32,12 @@
                 })
 
                 const data = await res.json();
-                if(data.errors){
+                if(data.error){
                     email_error.textContent = data.errors.email;
                     password_error.textContent = data.errors.password;
                 }
-                if(data.user){
-                    location.assign('/');
+                if(data.data){
+                    location.assign('/confirm');
                 }
 
             } catch (err) {
